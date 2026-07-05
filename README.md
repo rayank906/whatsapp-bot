@@ -1,4 +1,4 @@
-# WhatsApp Bot
+# WhatsApp Scheduler
 
 Sends a scheduled reminder to a WhatsApp group.
 
@@ -36,7 +36,11 @@ TIMEZONE=<timezone>
 SESSION_PATH=./.wwebjs_auth
 ```
 
+
+
 ## Usage
+
+
 
 ### 1. Find your group's ID
 
