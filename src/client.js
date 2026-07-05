@@ -11,6 +11,7 @@ export function createClient() {
     puppeteer: {
       headless: true,
       args: ["--no-sandbox", "--disable-setuid-sandbox"],
+      ...(config.chromePath ? { executablePath: config.chromePath } : {}),
     },
   });
 
@@ -43,23 +44,4 @@ export function createClient() {
   client.initialize();
 
   return { client, ready };
-}
-
-// finds chat id
-export async function resolveGroupId(client) {
-  if (config.groupId) return config.groupId;
-
-  const chats = await client.getChats();
-  const group = chats.find(
-    (c) => c.isGroup && c.name?.toLowerCase() === config.groupName.toLowerCase()
-  );
-
-  if (!group) {
-    throw new Error(
-      `Could not find a group named "${config.groupName}". ` +
-        'Run "npm run list-groups" to see available groups and set GROUP_ID instead.'
-    );
-  }
-
-  return group.id._serialized;
 }
