@@ -7,7 +7,7 @@ configured message to a chosen group on a recurring schedule.
 
 ### Purpose:
 
-This project was made to automate sending reminders to my Whatsapp family group for weekly meetings.
+This project was made to automate sending reminders to one of my Whatsapp group for weekly meetings.
 
 ## Requirements
 
